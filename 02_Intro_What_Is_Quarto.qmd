@@ -1,7 +1,7 @@
 ---
 title: "My First Quarto Document"
 author: "Aaron Kessler"
-date: "2/7/2023"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
     self-contained: true
@@ -18,7 +18,7 @@ library(janitor)
 
 ### What is Quarto?
 
-Text shows up here. You can type whatever you want...
+Text shows up here. You can type whatever you want... lll
 
 You can also do things like **bold some text** or *italicize* it. All kinds of other formatting things to play with too.
 
@@ -51,6 +51,16 @@ Let's try it...
 
 ```{r}
 
+```
+
+```{r}
+
+```
+
+
+```{r}
+
+head(txhousing)
 
 ```
 

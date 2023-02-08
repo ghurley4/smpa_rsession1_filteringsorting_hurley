@@ -52,7 +52,7 @@ We can also return just the few rows using `head()`.
 
 ```{r}
 
-head(flightdata)
+head(flightdata, 10)
 
 ```
 
@@ -72,7 +72,7 @@ Let's say I only want to see flights that were going to Sarasota, Florida (SRQ).
 
 ```{r}
  
-filter(flightdata, dest == "SRQ")
+filter(flightdata, dest == "DCA")
 
 ```
 
@@ -274,7 +274,7 @@ Set the stock ticker as an object and the start and end dates for the data that 
 
 ```{r}
 
-ticker <- "MSFT"  
+ticker <- "XOM"  
 
 ```
 
@@ -368,7 +368,8 @@ gasprices_weekly <- tq_get("GASREGW",
                            get = "economic.data", 
                            from = "2022-01-01")
 
-gasprices_weekly
+gasprices_weekly %>%
+  filter(price == max(price))
 ```
 
 -   With our gas prices data in hand, let's see what week had the highest since the start of 2022... How would we do it?
@@ -376,7 +377,8 @@ gasprices_weekly
 ```{r}
 
 
-
+gasprices_weekly %>%
+  filter(price == min(price))
 
 ```
 
@@ -393,6 +395,11 @@ gasprices_weekly
 
 ```{r}
 
+aug_onward <- gasprices_weekly %>%
+  filter(date >= "2022-08-01")
+
+aug_onward %>%
+    filter(price ==max(price))
 
 
 

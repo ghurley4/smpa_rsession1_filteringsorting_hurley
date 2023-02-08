@@ -28,7 +28,7 @@
 
 "Billy"
 
-# "Billy" + "Sallie"
+ "Billy" + "Sallie"
 
 #well that didn't work. What happened?
 
@@ -36,15 +36,17 @@
 #it's for making a list (known as a "vector") of values.
 
 c("Billy","Sallie")
+c(10, 1, 3)
 
 
 #Other languages call them variables, R calls them objects...but they're the same idea
 #Assigning something a name, so that you can use it
 
 myobject <- 1
+myobject <- 18
 
 #now I can tell R to give me the value of myobject by referring to it by its name
-myobject
+myobject * 10
 
 #let's try another
 mynames <- c("Billy","Sallie","Tony")
